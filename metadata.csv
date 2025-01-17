@@ -1,0 +1,10 @@
+Sample ID,Condition,Group
+237N,Control,14d
+281N,Control,14d
+267N,Sepsis,5d
+284L,Sepsis,5d
+284N,Sepsis,5d
+280N,Sepsis,5d
+237R,Sepsis,14d
+238R,Sepsis,14d
+266R,Sepsis,14d

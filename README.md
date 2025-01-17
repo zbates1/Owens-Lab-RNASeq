@@ -41,6 +41,60 @@ Prepare these inputs carefully using quality control and alignment tools.
 
 ---
 
+## CLI Packages to create input counts and metadata
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install fastqc -y
+```
+
+```bash
+sudo apt install python3-pip -y
+```
+
+```bash
+pip3 install cutadapt
+```
+
+```bash
+sudo apt install trim-galore -y
+```
+
+```bash
+sudo apt install hisat2 -y
+```
+
+```bash
+sudo apt install subread -y
+```
+
+```bash
+sudo apt install samtools -y
+```
+
+---
+
+## Downloading Reference Genome and Annoation File
+Mus musculus (Mouse, GRCm39):
+
+```bash
+wget ftp://ftp.ensembl.org/pub/release-109/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
+wget ftp://ftp.ensembl.org/pub/release-109/gtf/mus_musculus/Mus_musculus.GRCm39.109.gtf.gz
+```
+
+```bash
+# Decompress files
+gunzip Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
+gunzip Mus_musculus.GRCm39.109.gtf.gz
+```
+
+Prepare these inputs carefully using quality control and alignment tools.
+
+---
+
+
 ## Next Steps
 - [ ] Complete documentation links for scRNASeq tools.
 - [ ] Add more images or diagrams for the scRNASeq workflow.
