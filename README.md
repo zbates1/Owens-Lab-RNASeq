@@ -94,9 +94,8 @@ Prepare these inputs carefully using quality control and alignment tools.
 
 ---
 
-CLI Commands to Process Indivudal Fastq files
+## CLI Commands to Process Indivudal Fastq files
 
----
 ```bash
 # Quality Control with FastQC:
 fastqc -o qc_results/ sample_R1.fastq sample_R2.fastq
@@ -129,7 +128,7 @@ samtools index aligned/sample_sorted.bam
 featureCounts -T 4 -a annotation.gtf -o counts.txt aligned/*.bam
 ```
 
-## Now you have the files necessary to start with analysis in python
+**Now you have the files necessary to start with analysis in python**
 
 
 ## Next Steps
