@@ -94,7 +94,46 @@ Prepare these inputs carefully using quality control and alignment tools.
 
 ---
 
+CLI Commands to Process Indivudal Fastq files
+
+---
+```bash
+# Quality Control with FastQC:
+fastqc -o qc_results/ sample_R1.fastq sample_R2.fastq
+```
+
+```bash
+# Trim low quality reads:
+trim_galore --paired -o trimmed/ sample_R1.fastq sample_R2.fastq
+```
+
+```bash
+# Index Reference Genome (only needs to be done once):
+hisat2-build Mus_musculus.GRCm39.dna.primary_assembly.fasta reference_index
+```
+
+```bash
+# Align Reads to the Reference Genome:
+hisat2 -x reference_index -1 trimmed/sample_R1_val_1.fq -2 trimmed/sample_R2_val_2.fq -S aligned/sample.sam
+```
+
+```bash
+# Convert SAM to BAM:
+samtools view -bS aligned/sample.sam > aligned/sample.bam
+samtools sort aligned/sample.bam -o aligned/sample_sorted.bam
+samtools index aligned/sample_sorted.bam
+```
+
+```bash
+# Use featureCounts to count reads mapped to genes:
+featureCounts -T 4 -a annotation.gtf -o counts.txt aligned/*.bam
+```
+
+## Now you have the files necessary to start with analysis in python
+
 
 ## Next Steps
+- [ ] Add workflow for make to analyze all pairs automatically.
+- [ ] Finish ipynb that can handle these cmd prompt commands.
 - [ ] Complete documentation links for scRNASeq tools.
 - [ ] Add more images or diagrams for the scRNASeq workflow.
