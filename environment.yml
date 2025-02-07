@@ -1,0 +1,14 @@
+name: bioenv
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scipy
+  - openpyxl
+  - pip
+  - pip:
+    - pydeseq2
