@@ -2,3 +2,6 @@ pandas
 numpy
 matplotlib
 pydeseq2
+seaborn
+scipy
+openpyxl
