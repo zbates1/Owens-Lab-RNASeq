@@ -9,6 +9,7 @@ dependencies:
   - seaborn
   - scipy
   - openpyxl
+  - xlrd
   - pip
   - pip:
     - pydeseq2
