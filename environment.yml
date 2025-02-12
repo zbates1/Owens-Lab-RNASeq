@@ -8,6 +8,7 @@ dependencies:
   - matplotlib
   - seaborn
   - scipy
+  - scikit-learn
   - openpyxl
   - xlrd
   - pip

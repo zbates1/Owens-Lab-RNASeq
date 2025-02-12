@@ -5,6 +5,8 @@ qc_results/
 trimmed/
 aligned/
 
+
 # Col1GPF_Sepsis
 Col1GPF_Sepsis/.ipynb_checkpoints/
 Col1GPF_Sepsis/deg_utils.py
+Col1GPF_Sepsis/__pycache__/
