@@ -2,12 +2,12 @@ name: bioenv
 channels:
   - defaults
 dependencies:
-  - python=3.8
+  - python=3.9
   - pandas
   - numpy
   - matplotlib
   - seaborn
-  - scipy
+  - scipy=1.11
   - scikit-learn
   - openpyxl
   - xlrd
