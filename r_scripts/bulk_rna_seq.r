@@ -10,21 +10,34 @@ library(biomaRt)
 # Source the external file containing the function (if it's in a separate file)
 source("C:/Users/ztba231/Documents/convert_gene_names.R")
 
-# Read count data
-counts <- read.table("C:/Users/ztba231/Documents/genes.readcount.cntlD14.txt", 
+############################################################
+# Read count data for D14
+#counts <- read.table("C:/Users/ztba231/Documents/genes.readcount.cntlD14.txt", 
+#                     header = TRUE, 
+#                     row.names = 1)
+# Delete column, 'C_3_280N' as a control if you are in D14, because it is actually a D5 treatment
+#counts <- subset(counts, select = -C_3_280N)
+
+
+# Create metadata
+#coldata <- data.frame(
+#  row.names = colnames(counts),
+#  condition = factor(c("control", "control",
+#                       "treatment", "treatment", "treatment"))
+#)
+############################################################
+# Read count data for D5
+counts <- read.table("C:/Users/ztba231/Documents/genes.readcount.cntlD5.txt", 
                      header = TRUE, 
                      row.names = 1)
-
-# Delete column, 'C_3_280N' as a control if you are in D14, because it is actually a D5 treatment
-counts <- subset(counts, select = -C_3_280N)
-
 
 # Create metadata
 coldata <- data.frame(
   row.names = colnames(counts),
-  condition = factor(c("control", "control",
+  condition = factor(c("control", "control", "treatment",
                        "treatment", "treatment", "treatment"))
 )
+############################################################
 
 # Create DESeq2 object
 dds <- DESeqDataSetFromMatrix(

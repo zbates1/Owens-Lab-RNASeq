@@ -21,7 +21,7 @@ run_rnaseq_analysis <- function(count_file, columns_to_delete = NULL, conditions
       counts <- counts[, -columns_to_delete, drop = FALSE]
     } else {
       # If columns_to_delete is a vector of column names
-      counts <- counts %>% select(-all_of(columns_to_delete))
+      counts <- counts %>% dplyr::select(-all_of(columns_to_delete))
     }
   }
   
